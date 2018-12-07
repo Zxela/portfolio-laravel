@@ -110,7 +110,7 @@
             @section('example')
                 <example-component></example-component>
             @endsection
-            @yeild('example')
+            @yield('example')
         </div>
     </body>
 
