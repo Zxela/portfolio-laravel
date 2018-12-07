@@ -101,8 +101,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="#travel-gallery">In My Shoes</a>
-                    <a href="#walking-gallery">Travel Photography</a>
+                    <a href="#walking-gallery">In My Shoes</a>
+                    <a href="#travel-gallery">Travel Photography</a>
                     <a href="#about-me">About Me</a>
                 </div>
             </div>
