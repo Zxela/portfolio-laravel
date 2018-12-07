@@ -107,13 +107,13 @@
                 </div>
             </div>
         </div>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height" style="color: black">
             This is where the walking gallery goes
         </div>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height" style="color: black">
             This is for travel Photography
         </div>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height" style="color: black">
             This is for about me
         </div>
     </body>
