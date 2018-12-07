@@ -1,4 +1,6 @@
 <!doctype html>
+@extends('layouts.test')
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -107,10 +109,9 @@
         </div>
         <div name="shoes" class="flex-center position-ref full-height">
         
-            @section('example')
+            @section('test')
                 <example-component></example-component>
             @endsection
-            @yield('example')
         </div>
     </body>
 
