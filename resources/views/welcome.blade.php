@@ -110,7 +110,7 @@
         <div name="shoes" class="flex-center position-ref full-height">
         
             @section('test')
-                <example-component></example-component>
+            <example-component></example-component>
             @endsection
         </div>
     </body>
