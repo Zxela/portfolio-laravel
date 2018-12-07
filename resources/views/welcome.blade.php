@@ -107,7 +107,9 @@
         </div>
         <div name="shoes" class="flex-center position-ref full-height">
             <h3>
+                @section('example')
                 <example-component></example-component>
+                @show
             </h3>
         </div>
     </body>
