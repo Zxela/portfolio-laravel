@@ -101,19 +101,19 @@
                 </div>
 
                 <div class="links">
-                    <a href="">Travel Photography</a>
-                    <a href="">In My Shoes...</a>
-                    <a href="">About Me</a>
+                    <a href="#walking-gallery">Travel Photography</a>
+                    <a href="#travel-gallery">In My Shoes...</a>
+                    <a href="#about-me">About Me</a>
                 </div>
             </div>
         </div>
-        <div class="flex-center position-ref full-height" style="color: black">
+        <div id="walking-gallery" class="flex-center position-ref full-height" style="color: black">
             This is where the walking gallery goes
         </div>
-        <div class="flex-center position-ref full-height" style="color: black">
+        <div id="travel-gallery" class="flex-center position-ref full-height" style="color: black">
             This is for travel Photography
         </div>
-        <div class="flex-center position-ref full-height" style="color: black">
+        <div id="about-me" class="flex-center position-ref full-height" style="color: black">
             This is for about me
         </div>
     </body>
