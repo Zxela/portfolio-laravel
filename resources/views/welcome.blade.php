@@ -107,11 +107,14 @@
                 </div>
             </div>
         </div>
-        <div name="shoes" class="flex-center position-ref full-height">
-        
-            @section('test')
-            <example-component></example-component>
-            @endsection
+        <div class="flex-center position-ref full-height">
+            This is where the walking gallery goes
+        </div>
+        <div class="flex-center position-ref full-height">
+            This is for travel Photography
+        </div>
+        <div class="flex-center position-ref full-height">
+            This is for about me
         </div>
     </body>
 
