@@ -73,6 +73,7 @@
                 background-size: cover;
             }
         </style>
+        
     </head>
     <body>
 
@@ -106,8 +107,11 @@
         </div>
         <div name="shoes" class="flex-center position-ref full-height">
             <h3>
-                Hello
+                <example-component></example-component>
             </h3>
         </div>
     </body>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </html>
