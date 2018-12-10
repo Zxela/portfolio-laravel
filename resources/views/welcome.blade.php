@@ -1,123 +1,59 @@
 <!doctype html>
-@extends('layouts.test')
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Jizelle Teves</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <title>Jizelle Teves</title>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                z-index: initial;
-                color: #FFF;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+</head>
 
-            .full-height {
-                height: 100vh;
-            }
+<body>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 134px;
-                text-shadow: slategrey;
-                padding: 0 15px;
-            }
-
-            .links > a {
-                color: #FFF;
-                padding: 0 20px;
-                font-size: 20px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-            .background {
-                background-image: url("https://res.cloudinary.com/dgppfa9sm/image/upload/v1544154000/Jizelle/IMG_9858.jpg");
-                /* Full height */
-                height: 100%; 
-                /* Center and scale the image nicely */
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-        </style>
+    <div name="title" class="flex-center position-ref full-height background">
         
-    </head>
-    <body>
 
-        <div name="title" class="flex-center position-ref full-height background">
-            <!-- @if (Route::has('login')) -->
-                <!-- Nav Bar-->
-                <!-- <div class="top-right links"> -->
-                    <!-- @auth -->
-                        <!-- <a href="{{ url('/home') }}">Home</a> -->
-                    <!-- @else -->
-                        <!-- <a href="{{ route('login') }}">Login</a> -->
+        <div class="content">
+            <div class="title m-b-md">
+                Jizelle Teves
+            </div>
 
-                        <!-- @if (Route::has('register')) -->
-                            <!-- <a href="{{ route('register') }}">Register</a> -->
-                        <!-- @endif -->
-                    <!-- @endauth -->
-                <!-- </div> -->
-            <!-- @endif -->
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Jizelle Teves
-                </div>
-
-                <div class="links">
-                    <a href="#walking-gallery">In My Shoes</a>
-                    <a href="#travel-gallery">Travel Photography</a>
-                    <a href="#about-me">About Me</a>
-                </div>
+            <div class="links">
+                <a href="#walking-gallery">In My Shoes</a>
+                <a href="#travel-gallery">Travel Photography</a>
+                <a href="#about-me">About Me</a>
             </div>
         </div>
-        <div id="walking-gallery" class="flex-center position-ref full-height" style="color: black">
-            This is where the walking gallery goes
-        </div>
-        <div id="travel-gallery" class="flex-center position-ref full-height" style="color: black">
-            This is for travel Photography
-        </div>
-        <div id="about-me" class="flex-center position-ref full-height" style="color: black">
-            This is for about me
-        </div>
-    </body>
+    </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    @component('preview')
+        @slot('id')
+            'walking-gallery'
+        @endslot
+        This is where the walking gallery goes     
+    @endcomponent
+    @component('preview')
+    @slot('id')
+            'travel-gallery'
+        @endslot
+        This is where the travel gallery goes     
+    @endcomponent
+    @component('preview')
+    @slot('id')
+            'about-me'
+        @endslot
+        This is where the about me goes     
+    @endcomponent
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="{{ asset('js/welcome.js') }}"></script>
+
 </html>
+

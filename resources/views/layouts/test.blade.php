@@ -4,5 +4,5 @@
  <script src="{{ asset('js/app.js') }}" defer></script>
 
 <main class="py-4">
-    @yield('test')
+    @yield('content')
 </main>
