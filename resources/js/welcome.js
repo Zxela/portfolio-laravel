@@ -1,6 +1,5 @@
-// Select all links with hashes
 $(function () {
-    console.log("ready")
+    // Select all links with hashes
     $('a[href*="#"]')
         // Remove links that don't actually link to anything
         .not('[href="#"]')
