@@ -10467,9 +10467,30 @@ a.text-dark:focus {
 }
 
 .navbar-laravel {
-  background-color: #fff;
+  position: absolute;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  z-index: 5;
+  width: 100vw;
+}
+
+.navbar-brand {
+  text-shadow: slategrey;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+  cursor: crosshair;
 }
 
 html,
@@ -10502,6 +10523,10 @@ body {
   position: relative;
 }
 
+.position-abs {
+  position: absolute;
+}
+
 .top-right {
   position: absolute;
   right: 10px;
@@ -10514,25 +10539,28 @@ body {
 
 .title {
   font-size: 134px;
-  text-shadow: slategrey;
-  padding: 0 15px;
+  margin: 0 auto;
 }
 
-.links > a {
+.links {
   color: #fff;
   padding: 0 20px;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.1rem;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.links:hover {
+  text-decoration: none;
 }
 
 .m-b-md {
   margin-bottom: 30px;
 }
 
-.background {
+.title-background {
   background-image: url("https://res.cloudinary.com/dgppfa9sm/image/upload/v1544405555/Jizelle/Travel/IMG_2239.jpg");
   /* Full height */
   height: 100%;

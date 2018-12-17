@@ -19,6 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/walking', function () {
-    return view('gallery');
-});
+Route::get('/walking', 'GalleryController@walking')->name('gallery');
+Route::get('/travel', 'GalleryController@travel')->name('gallery');

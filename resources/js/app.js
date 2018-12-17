@@ -4,8 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-window.Vue = require('vue');
+require("./bootstrap");
+window.Vue = require("vue");
 
 /**
  * The following block of code may be used to automatically register your
@@ -15,10 +15,7 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component(
-    'gallery-component',
-    require('./components/GalleryComponent.vue')
-);
+Vue.component("gallery-component", require("./components/GalleryComponent.vue"));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -30,5 +27,9 @@ Vue.component(
  */
 
 const app = new Vue({
-    el: '#app'
+    el: "#app",
+    data: {
+        images: [],
+        index: null
+    }
 });

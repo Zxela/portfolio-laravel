@@ -14,6 +14,12 @@ return [
     |
     */
 
+    'cloudinary' => [
+        "cloud_name" => env('GALLERY_NAMESPACE'), 
+        "api_key" => env('GALLERY_API_KEY'), 
+        "api_secret" => env('GALLERY_API_SECRET'), 
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

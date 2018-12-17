@@ -13943,7 +13943,7 @@ window.Vue = __webpack_require__(36);
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component('gallery-component', __webpack_require__(39));
+Vue.component("gallery-component", __webpack_require__(39));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -13955,7 +13955,11 @@ Vue.component('gallery-component', __webpack_require__(39));
  */
 
 var app = new Vue({
-  el: '#app'
+  el: "#app",
+  data: {
+    images: [],
+    index: null
+  }
 });
 
 /***/ }),
@@ -36006,7 +36010,7 @@ module.exports = function spread(callback) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.5.18
+ * Vue.js v2.5.21
  * (c) 2014-2018 Evan You
  * Released under the MIT License.
  */
@@ -38908,7 +38912,7 @@ function mountComponent (
   // component's mounted hook), which relies on vm._watcher being already defined
   new Watcher(vm, updateComponent, noop, {
     before: function before () {
-      if (vm._isMounted) {
+      if (vm._isMounted && !vm._isDestroyed) {
         callHook(vm, 'beforeUpdate');
       }
     }
@@ -39849,9 +39853,10 @@ function renderList (
       ret[i] = render(val[key], key, i);
     }
   }
-  if (isDef(ret)) {
-    (ret)._isVList = true;
+  if (!isDef(ret)) {
+    ret = [];
   }
+  (ret)._isVList = true;
   return ret
 }
 
@@ -41193,7 +41198,7 @@ Object.defineProperty(Vue, 'FunctionalRenderContext', {
   value: FunctionalRenderContext
 });
 
-Vue.version = '2.5.18';
+Vue.version = '2.5.21';
 
 /*  */
 
@@ -41546,12 +41551,6 @@ var emptyNode = new VNode('', {}, []);
 
 var hooks = ['create', 'activate', 'update', 'remove', 'destroy'];
 
-function childrenIgnored (vnode) {
-  return vnode && vnode.data && vnode.data.domProps && (
-    vnode.data.domProps.innerHTML || vnode.data.domProps.textContent
-  )
-}
-
 function sameVnode (a, b) {
   return (
     a.key === b.key && (
@@ -41559,7 +41558,6 @@ function sameVnode (a, b) {
         a.tag === b.tag &&
         a.isComment === b.isComment &&
         isDef(a.data) === isDef(b.data) &&
-        !childrenIgnored(a) && !childrenIgnored(b) &&
         sameInputType(a, b)
       ) || (
         isTrue(a.isAsyncPlaceholder) &&
@@ -42858,7 +42856,7 @@ function genComponentModel (
 
   el.model = {
     value: ("(" + value + ")"),
-    expression: ("\"" + value + "\""),
+    expression: JSON.stringify(value),
     callback: ("function (" + baseValueExpression + ") {" + assignment + "}")
   };
 }
@@ -45479,7 +45477,7 @@ function processKey (el) {
         var parent = el.parent;
         if (iterator && iterator === exp && parent && parent.tag === 'transition-group') {
           warn$2(
-            "Do not use v-for index as key on <transtion-group> children, " +
+            "Do not use v-for index as key on <transition-group> children, " +
             "this is the same as not using keys."
           );
         }
@@ -46596,7 +46594,9 @@ function genChildren (
       el$1.tag !== 'template' &&
       el$1.tag !== 'slot'
     ) {
-      var normalizationType = checkSkip && state.maybeComponent(el$1) ? ",1" : "";
+      var normalizationType = checkSkip
+        ? state.maybeComponent(el$1) ? ",1" : ",0"
+        : "";
       return ("" + ((altGenElement || genElement)(el$1, state)) + normalizationType)
     }
     var normalizationType$1 = checkSkip
@@ -47426,7 +47426,7 @@ var content = __webpack_require__(41);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(43)("7417bddc", content, false, {});
+var update = __webpack_require__(43)("584cdcbf", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -47450,7 +47450,7 @@ exports = module.exports = __webpack_require__(42)(false);
 
 
 // module
-exports.push([module.i, "\nhtml[data-v-a13cd294],\r\nbody[data-v-a13cd294] {\r\n\tcolor: black;\r\n\tfont-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\",\r\n\t\t\"Lucida Sans\", Arial, sans-serif;\r\n\tfont-weight: 100;\r\n\theight: 100vh;\r\n\tmargin: 0;\n}\n.full-height[data-v-a13cd294] {\r\n\theight: 100vh;\n}\n.flex-center[data-v-a13cd294] {\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\n}\n.position-ref[data-v-a13cd294] {\r\n\tposition: relative;\n}\n.top-right[data-v-a13cd294] {\r\n\tposition: absolute;\r\n\tright: 10px;\r\n\ttop: 18px;\n}\n.content[data-v-a13cd294] {\r\n\ttext-align: center;\n}\n.title[data-v-a13cd294] {\r\n\tfont-size: 84px;\n}\n.links > a[data-v-a13cd294] {\r\n\tcolor: #636b6f;\r\n\tpadding: 0 25px;\r\n\tfont-size: 12px;\r\n\tfont-weight: 600;\r\n\tletter-spacing: 0.1rem;\r\n\ttext-decoration: none;\r\n\ttext-transform: uppercase;\n}\n.m-b-md[data-v-a13cd294] {\r\n\tmargin-bottom: 30px;\n}\n.walking-background[data-v-a13cd294] {\r\n\tbackground-image: url(https://res.cloudinary.com/dgppfa9sm/image/upload/v1544921819/Jizelle/IMG_5314.jpg);\r\n\tbackground-position: center;\r\n\tbackground-repeat: no-repeat;\r\n\tbackground-size: cover;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -47936,30 +47936,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "navigation" })
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "flex-center position-ref full-height walking-background"
-      },
-      [
-        _c("div", { staticClass: "content" }, [
-          _c("div", { staticClass: "title m-b-md" }, [
-            _vm._v("Walking in my shoes")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "navigation" })
-        ])
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
