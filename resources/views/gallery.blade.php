@@ -16,12 +16,9 @@
 
 <body>
     <div id="app">
-        <gallery-component></gallery-component>
+    <gallery-component :images="{{ json_encode($imageUrls) }}"></gallery-component>
     </div>
-    @foreach ($images as $image)
-    <img src="{{ $image['url'] }}" class="position-ref" style="height: 33vh; width: 33vw;"/>
-    @endforeach
-
+   
 </body>
 
 <script src="{{ asset('js/app.js') }}" defer></script>

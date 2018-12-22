@@ -1,17 +1,44 @@
 <template>
-	<!-- <div class="flex-center position-ref full-height walking-background"> -->
-	<!-- <div class="content"> -->
-	<!-- <div class="title m-b-md">Walking in my shoes</div> -->
-	<div class="navigation"></div>
-	<!-- </div> -->
-	<!-- </div> -->
+	<div>
+		<div class="navigation"></div>
+		<gallery :images="images" :index="index" @close="index = null"></gallery>
+		<div
+			class="image"
+			v-for="(image, imageIndex) in images"
+			:key="imageIndex"
+			@click="index = imageIndex"
+			:style="{ backgroundImage: 'url(' + image + ')', width: '300px', height: '200px' }"
+		></div>
+	</div>
 </template>
+
 <script>
+	import VueGallery from "vue-gallery";
+
 	export default {
+		props: ["images"],
+		data: function() {
+			return {
+				index: null
+			};
+		},
 		mounted() {
 			console.log("Component mounted.");
+			console.log(this.images);
+		},
+		components: {
+			gallery: VueGallery
 		}
 	};
-</script>
+</script> 
+
 <style scoped>
+.image {
+	float: left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border: 1px solid #ebebeb;
+	margin: 5px;
+}
 </style>

@@ -37,11 +37,19 @@ class GalleryController extends Controller
      */
     public function walking()
     {
-        return view('gallery', ['images' => $this->walkingResult]);
+        return view('gallery', ['imageUrls' => $this->getUrls($this->walkingResult)]);
     }
     
     public function travel()
     {
-        return view('gallery', ['images' => $this->travelResult]);
+        return view('gallery', ['imageUrls' => $this->getUrls($this->travelResult)]);
+    }
+    private function getUrls($result)
+    {
+        $urlArray = array();
+        foreach ($result as $image) {
+            array_push($urlArray, $image['url']);
+        }
+        return $urlArray;
     }
 }

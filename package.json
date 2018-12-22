@@ -22,6 +22,7 @@
     "dependencies": {
         "ajv": "^6.6.1",
         "fs": "0.0.1-security",
-        "imagemin": "^6.0.0"
+        "imagemin": "^6.0.0",
+        "vue-gallery": "^1.5.0"
     }
 }
